@@ -2,6 +2,8 @@ package a_set;
 
 import java.util.TreeSet;
 
+import bean.ComparatorByLength;
+
 class Errs{
 	
 }
@@ -12,7 +14,7 @@ class Errs{
  * */
 public class TreeSetDemo {
 	public static void main(String[] args) {
-		TreeSet ts=new TreeSet();
+		TreeSet ts=new TreeSet(new ComparatorByLength());
 		
 	/*	ts.add(3);
 		ts.add(23);
@@ -28,6 +30,7 @@ public class TreeSetDemo {
 		ts.add("apple");
 		ts.add("zxa");
 		ts.add("hello");
+		ts.add("hello3");
 		//向TreeSet添加的元素应该是同一个类型
 		//ts.add(123);
 		
@@ -35,11 +38,11 @@ public class TreeSetDemo {
 			String str=(String) obj;
 			System.out.println(str);
 		}
-		System.out.println("============");
+		/*System.out.println("============");
 		System.out.println(ts.first());
 		System.out.println(ts.last());
 		
-	/*	
+
 		TreeSet ts2=new TreeSet();
 		ts2.add(new Errs());
 		ts2.add(new Errs());
