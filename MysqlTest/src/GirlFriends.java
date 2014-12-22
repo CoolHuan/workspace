@@ -135,8 +135,8 @@ public class GirlFriends {
 			// addGirl(); 添加一个女朋友
 			//goodBay();	找个女朋友分手
 			//change();		改变一个女朋友的信息
-			search();	//查找一个女朋友
-			// update();	//打印女朋友总表格
+			//search();	//查找一个女朋友
+			update();	//打印女朋友总表格
 			
 			
 	}
