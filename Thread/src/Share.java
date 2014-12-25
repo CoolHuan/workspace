@@ -1,17 +1,44 @@
 
+/*
+ * 产生线程安全问题的原因：
+ * 1、多个线程在操作共享数据下：其他线程会对当前的线程造成干扰
+ * 
+ */
+ 
+ 
 public class Share implements Runnable{
-	int ticket=400;//共有10张票
+	int ticket=10;//共有10张票
 	int num=0;	//卖出了多少张
 	Object obj=new Object();
 	@Override
 	public void run() {
-		while(true){
+		for (int i=1;i<=10;i++) {
+			test();
+		}
+//		while(true){
+//			synchronized(obj){
+//				if(ticket>0){
+//					ticket--;
+//					num++;
+//					try {
+//						Thread.sleep(100);
+//					} catch (Exception e) {
+//					
+//					}
+//					System.out.println(Thread.currentThread().getName()+"卖出了第"
+//						+num+"张车票，还剩"+ticket+"张车票");
+//				}
+//			}
+//		}
+	}
+	public synchronized void test(){
+		
 			synchronized(obj){
 				if(ticket>0){
 					ticket--;
 					num++;
 					try {
-						Thread.sleep(10);
+						Thread.sleep(100);
 					} catch (Exception e) {
 					
 					}
@@ -19,7 +46,7 @@ public class Share implements Runnable{
 						+num+"张车票，还剩"+ticket+"张车票");
 				}
 			}
-		}
+		
 	}
 	public static void main(String[] args) {
 		Share t=new Share();
