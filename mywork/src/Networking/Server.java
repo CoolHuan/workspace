@@ -13,10 +13,10 @@ public class Server {
 		
 			System.out.println("服务器在监听····");
 			Socket s=ss.accept();
-			//读取从客户端接收到的消息
+			//服务器输入流
 			InputStreamReader isr=new InputStreamReader(s.getInputStream());
 			BufferedReader bur=new BufferedReader(isr);
-			//客户单输出流
+			//服务器输出流
 			PrintStream ps=new PrintStream(s.getOutputStream(),true);
 			//读取从控制台输入的消息
 			InputStreamReader isr2=new InputStreamReader(System.in);

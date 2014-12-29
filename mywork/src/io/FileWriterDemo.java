@@ -25,7 +25,7 @@ public class FileWriterDemo {
 		
 		//关闭流资源，但是关闭之前会刷新一次内部的缓冲中的数据。
 		//将数据刷到目的地中
-		//和flush区别  flush刷新hour，流可以继续使用，close刷新后，会将流关闭。
+		//和flush区别  flush刷新后，流可以继续使用，close刷新后，会将流关闭。
 		fw.close();
 	//	fw.write("haha");
 		

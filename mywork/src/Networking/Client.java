@@ -7,7 +7,9 @@ public class Client {
 
 	public static void main(String[] args) throws IOException {
 		Socket s=new Socket("127.0.0.1",30000);
-		PrintWriter pw=new PrintWriter(s.getOutputStream(), true);	
+		//客户端输出流
+		PrintWriter pw=new PrintWriter(s.getOutputStream(), true);
+		//客户端输入流
 		BufferedReader br=new BufferedReader(new InputStreamReader(s.getInputStream()));
 		BufferedReader br2=new BufferedReader(new InputStreamReader(System.in));
 		

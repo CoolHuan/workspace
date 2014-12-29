@@ -8,7 +8,7 @@ public class FileReaderDemo {
 
 	
 	public static void main(String[] args) throws IOException {
-		//常见一个文件读取流对象，和指定名称的文件想关联
+		//常见一个文件读取流对象，和指定名称的文件相关联
 		//要保证该文件是已经存在的，如果不存在，会发生FileNotFoundException
 		FileReader fr=new FileReader("demo.txt");
 		//调用读取流对象的read方法。

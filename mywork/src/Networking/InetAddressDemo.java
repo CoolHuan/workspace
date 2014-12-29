@@ -14,7 +14,7 @@ public class InetAddressDemo {
 
 	public static void main(String[] args) throws IOException {
 		// 根据主机名来获取对应的InetAddress实例
-		InetAddress ip=InetAddress.getByName("www.crazyit.org");
+		InetAddress ip=InetAddress.getByName("www.baidu.com");
 		//判断是否可达
 		System.out.println("crazyit是否可到达"+ip.isReachable(20));
 		//获取该InetAddress实例的IP字符串
