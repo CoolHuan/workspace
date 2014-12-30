@@ -22,21 +22,22 @@ public class UdpReceive{
 	public static void main(String[] args) throws IOException{
 		//1,创建udp socket，建立端点
 		DatagramSocket ds=new DatagramSocket(10000);
-
+		while(true){
 		//定义一个数据包
 		byte[] buf=new byte[1024];
 		DatagramPacket dp=new DatagramPacket(buf,buf.length);
 		
 		//3，通过服务的receive方法将收到数据存入数据包中
-		ds.receive(dp);
+		ds.receive(dp);//阻塞式方法
 		
-		//4.通过数据包的方法获取其中的数据
+		//4.通过数据包的特有方法获取其中的数据
 		String ip=dp.getAddress().getHostAddress();
 		String Data=new String(dp.getData(),0,dp.getLength());
 		int port=dp.getPort();
 		System.out.println("ip::"+ip+"Data::"+Data+"port::"+port);
+		}
 		//5.关闭资源
-		ds.close();
+		//ds.close();
 		
 	}
 }

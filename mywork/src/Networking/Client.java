@@ -2,7 +2,13 @@ package Networking;
 
 import java.io.*;
 import java.net.*;
-
+/*
+ *1. 建立socket服务。指定连接主机和端口。
+ *2.获取socket流中的输出流。将数据写到该流中。通过网络发送给客户端。
+ *3.获取socket流中的输入流，将服务端反馈的数据获取到，并打印。 
+ *4.关闭客户端资源
+ * 
+ * */
 public class Client {
 
 	public static void main(String[] args) throws IOException {
