@@ -22,7 +22,7 @@ class send implements Runnable {
 			if("886".equals(line))
 				break;
 			byte[] buf=line.getBytes();
-			DatagramPacket dp=new DatagramPacket(buf,buf.length, InetAddress.getByName("10.205.1.13"), 34100);
+			DatagramPacket dp=new DatagramPacket(buf,buf.length, InetAddress.getByName("10.205.1.13"), 45678);
 			ds.send(dp);
 			
 			}
@@ -64,7 +64,7 @@ public class ChatDemo {
 
 	public static void main(String[] args) throws IOException {
 		DatagramSocket send=new DatagramSocket();
-		DatagramSocket receive=new DatagramSocket(34100);
+		DatagramSocket receive=new DatagramSocket(45678);
 		new Thread(new send(send)).start();
 		new Thread(new Receive(receive)).start();
 
